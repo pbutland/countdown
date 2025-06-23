@@ -1,0 +1,449 @@
+.lifespan-result {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Time view switch styling */
+.time-view-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.time-view-switch span {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #666;
+  transition: color 0.3s ease;
+  /* Fixed width ensures the labels don't shift */
+  width: 80px;
+  text-align: center;
+}
+
+.time-view-switch span:not(.active) {
+  /* Lower opacity for inactive state while keeping bold font weight */
+  opacity: 0.8;
+}
+
+.time-view-switch span.active {
+  color: #333;
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Toggle switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+  width: 60px !important;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.lifespan-result h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.circular-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for positioning HTML elements over SVG */
+.circle-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-ring {
+  position: relative;
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  /* Remove transition to prevent extra delay in animation */
+  transform-origin: center;
+}
+
+/* Parent container for text elements - positioned in the exact center of SVG */
+.text-content-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 300px; /* Ensure text doesn't get too wide */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;
+}
+
+/* Updated text styling for HTML elements - now relative to parent */
+.remaining-years-text {
+  position: relative;
+  color: #2c3e50;
+  font-size: calc(16px + 1vmin); /* Responsive font size */
+  font-weight: bold;
+  width: 240px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+  line-height: 1.2;
+  word-wrap: break-word; /* Handle long numbers */
+  overflow-wrap: break-word;
+}
+
+.years-label-text {
+  position: relative;
+  color: #7f8c8d;
+  font-size: calc(12px + 0.2vmin); /* Slightly responsive */
+  font-style: italic;
+  width: 250px;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+  word-wrap: break-word; /* Handle long text */
+  overflow-wrap: break-word;
+}
+
+.unit-content {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.unit-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #3498db;
+}
+
+.unit-description {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.unit-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.circle-unit-navigation {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+button {
+  padding: 0;
+}
+
+.unit-nav-button {
+  background: none;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: #95a5a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.unit-nav-button:active {
+  background-color: rgba(52, 152, 219, 0.2);
+  border-color: #3498db;
+  color: #3498db;
+  border-radius: 50%;
+}
+
+.unit-nav-button:hover {
+  color: #3498db;
+  border-color: #3498db;
+}
+
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #7f8c8d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #95a5a6;
+}
+
+.reset-button:active {
+  transform: translateY(1px);
+}
+
+/* Famous person comparison section */
+.comparison-container {
+  min-height: 150px;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.comparison-section {
+  /* margin: 1.5rem 0; */
+  padding: 0.75rem 0.25rem;
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.comparison-section p {
+  margin: 0;
+  color: #34495e;
+  font-size: 1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.comparison-nav-button {
+  background: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: #95a5a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.5em;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+.comparison-nav-button:focus {
+  outline: none;
+}
+
+.comparison-nav-button:active {
+  background-color: transparent;
+  border: none;
+  color: #3498db;
+}
+
+.comparison-nav-button:hover {
+  background-color: transparent;
+  color: #3498db;
+  border: none;
+}
+
+/* Animation for the progress circle */
+@keyframes fillCircle {
+  from {
+    stroke-dashoffset: 628; /* Circumference of circle with r=100 */
+  }
+  to {
+    stroke-dashoffset: var(--target-dash-offset);
+  }
+}
+
+/* Extra years indicator for users who exceeded average lifespan */
+.extra-years-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* Positive message for users who exceeded average lifespan */
+.positive-message {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.positive-message h3 {
+  color: #2e7d32;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.positive-message span {
+  color: #1b5e20;
+}
+
+.positive-message strong {
+  color: #1b5e20;
+  font-weight: bold;
+}
+
+
+/* Share button styling */
+.share-button {
+  background: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.share-button:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.share-button:active {
+  transform: scale(0.95);
+}
+
+/* Toast notification styling */
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .text-content-container {
+    width: 70%;
+    max-width: 170px;
+  }
+  
+  .remaining-years-text {
+    font-size: calc(12px + 2vmin);
+    width: 250px;
+  }
+  
+  .years-label-text {
+    font-size: 14px;
+  }
+
+  .comparison-container {
+    min-height: 130px;
+  }
+
+  .circle-unit-navigation {
+    bottom: 80px;
+  }
+}
