@@ -318,7 +318,7 @@ export const amusingTimeUnits: TimeUnit[] = [
     singular: 'new programming language',
     plural: 'new programming languages',
     convertFromYears: (years) => years * 8.7, // ~8.7 new notable languages per year
-    description: 'Number of new programming languages created'
+    description: 'Number of new programming languages'
   },
 
   // Random Countdown Ideas Units
