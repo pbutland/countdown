@@ -37,8 +37,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 80px;
-  height: 34px;
+  width: 75px;
+  height: 30px;
 }
 
 .switch input {
@@ -56,17 +56,17 @@
   bottom: 0;
   background-color: #ccc;
   transition: .4s;
-  border-radius: 34px;
-  width: 60px !important;
+  border-radius: 30px;
+  width: 52px !important;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   transition: .4s;
   border-radius: 50%;
@@ -81,7 +81,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(22px);
 }
 
 .lifespan-result h2 {
