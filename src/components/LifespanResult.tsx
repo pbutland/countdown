@@ -232,8 +232,8 @@ const LifespanResult = ({
       const person = shuffledFamousPeople[comparisonIndex];
       
       // Convert both ages to the same unit for comparison
-      const personLifespanInUnit = currentUnit.convertFromYears(person.lifespanYears);
-      const userCurrentAgeInUnit = currentUnit.convertFromYears(actualAge);
+      const personLifespanInUnit = currentUnit.convertFromYears(person.lifespanYears, actualAge + remainingYears);
+      const userCurrentAgeInUnit = currentUnit.convertFromYears(actualAge, actualAge + remainingYears);
 
       // Calculate the difference and determine if more or less
       const difference = Math.abs(personLifespanInUnit - userCurrentAgeInUnit);
@@ -375,8 +375,8 @@ const LifespanResult = ({
             <div className="text-content-container">
               <div className="remaining-years-text">
                 {timeView === 'remaining' 
-                  ? convertToUnit(remainingYears, currentUnit, 'remaining')
-                  : convertToUnit(actualAge, currentUnit, 'achieved')
+                  ? convertToUnit(remainingYears, actualAge + remainingYears, currentUnit, 'remaining')
+                  : convertToUnit(actualAge, actualAge + remainingYears, currentUnit, 'achieved')
                 }
               </div>
               <div className="years-label-text">

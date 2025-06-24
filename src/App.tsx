@@ -45,7 +45,7 @@ function App() {
       // Prepare the time units
       const shuffledUnits = shuffleArray(amusingTimeUnits);
       const filteredUnits = shuffledUnits.filter(unit => {
-        const value = unit.convertFromYears(remainingYears);
+        const value = unit.convertFromYears(remainingYears, age + remainingYears);
         return parseFloat(formatNumber(value)) !== 0;
       });
       
@@ -79,7 +79,7 @@ function App() {
     
     // Filter out units with zero values after formatting
     const filteredUnits = shuffledUnits.filter(unit => {
-      const value = unit.convertFromYears(remainingYears);
+      const value = unit.convertFromYears(remainingYears, age + remainingYears);
       return parseFloat(formatNumber(value)) !== 0;
     });
     

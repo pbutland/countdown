@@ -298,7 +298,7 @@ export interface TimeUnit {
   singular: string;
   plural: string;
   pastTense?: string;
-  convertFromYears: (years: number) => number;
+  convertFromYears: (years: number, totalYears: number) => number;
   description: string;
 }
 
@@ -387,8 +387,8 @@ export const formatNumber = (num: number): string => {
   }
 };
 
-export const convertToUnit = (years: number, unit: TimeUnit, timeView?: 'remaining' | 'achieved'): string => {
-  const value = unit.convertFromYears(years);
+export const convertToUnit = (years: number, totalYears: number, unit: TimeUnit, timeView?: 'remaining' | 'achieved'): string => {
+  const value = unit.convertFromYears(years, totalYears);
   const formattedValue = formatNumber(value);
   
   // Use pastTense if available and timeView is "achieved"

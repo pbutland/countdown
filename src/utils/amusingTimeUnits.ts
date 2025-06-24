@@ -4,7 +4,6 @@ import type { TimeUnit } from './lifespan';
  * Collection of amusing, creative, and unique time units to measure human lifespan
  */
 export const amusingTimeUnits: TimeUnit[] = [
-  // Original units
   {
     name: 'fruit-fly-generations',
     singular: 'fruit fly generation',
@@ -13,25 +12,11 @@ export const amusingTimeUnits: TimeUnit[] = [
     description: 'Fruit flies typically live for about 40 days'
   },
   {
-    name: 'jupiter-orbits',
-    singular: 'Jupiter orbit',
-    plural: 'Jupiter orbits',
-    convertFromYears: (years) => years / 11.86, // Jupiter orbits the sun every 11.86 years
-    description: 'Jupiter takes 11.86 years to orbit the Sun'
-  },
-  {
     name: 'dog-years',
     singular: 'dog year',
     plural: 'dog years',
     convertFromYears: (years) => years * 7, // Common (if inaccurate) conversion
     description: 'A rough conversion where 1 human year equals 7 dog years'
-  },
-  {
-    name: 'heart-beats',
-    singular: 'heart beat',
-    plural: 'heart beats',
-    convertFromYears: (years) => years * 365 * 24 * 60 * 72, // Average 72 beats per minute
-    description: 'Based on an average heart rate of 72 beats per minute'
   },
   {
     name: 'coffees',
@@ -47,8 +32,29 @@ export const amusingTimeUnits: TimeUnit[] = [
     convertFromYears: (years) => years * 365, // Assuming daily charging
     description: 'Based on charging your phone once per day'
   },
+  {
+    name: 'percentage',
+    singular: '%',
+    plural: '%',
+    convertFromYears: (years, totalYears) => years / totalYears * 100, // Percentage of life
+    description: 'Percentage based on estimated lifespan'
+  },
   
   // Biological Countdown units
+  {
+    name: 'heart-beats',
+    singular: 'heart beat',
+    plural: 'heart beats',
+    convertFromYears: (years) => years * 365 * 24 * 60 * 72, // Average 72 beats per minute
+    description: 'Based on an average heart rate of 72 beats per minute'
+  },
+  {
+    name: 'breaths',
+    singular: 'breath',
+    plural: 'breaths',
+    convertFromYears: (years) => years * 365 * 24 * 60 * 15, // Average 15 breaths per minute
+    description: 'Based on an average breathing rate of 15 breaths per minute'
+  },
   {
     name: 'blinks',
     singular: 'eye blink',
@@ -159,6 +165,41 @@ export const amusingTimeUnits: TimeUnit[] = [
     plural: 'lunar eclipses',
     convertFromYears: (years) => years * 2.3, // Global average of ~2.3 lunar eclipses per year
     description: 'Number of lunar eclipses that will occur (average of 2-3 lunar eclipses per year globally)'
+  },
+  {
+    name: 'full-moons',
+    singular: 'full moon',
+    plural: 'full moons',
+    convertFromYears: (years) => years * 12.37, // There are about 12.37 full moons per year
+    description: 'Number of full moons that will occur (approximately 12.37 per year)'
+  },
+  {
+    name: 'blue-moons',
+    singular: 'blue moon',
+    plural: 'blue moons',
+    convertFromYears: (years) => years * (7/19), // A blue moon occurs about 7 times in 19 years
+    description: 'Number of blue moons you will see (a second full moon in a calendar month, occurs about 7 times in 19 years)'
+  },
+  {
+    name: 'iss-orbits',
+    singular: 'orbit of the ISS',
+    plural: 'orbits of the ISS',
+    convertFromYears: (years) => years * 365.25 * 16, // ISS orbits Earth about 16 times per day
+    description: 'Number of times the International Space Station will orbit Earth (approx. 16 orbits per day)'
+  },
+  {
+    name: 'major-comets',
+    singular: 'major comet appearance',
+    plural: 'major comet appearances',
+    convertFromYears: (years) => years * 0.2, // Major comets visible to naked eye appear roughly once every 5 years
+    description: 'Number of major comet appearances visible from Earth (approximately one every 5 years)'
+  },
+  {
+    name: 'jupiter-orbits',
+    singular: 'Jupiter orbit',
+    plural: 'Jupiter orbits',
+    convertFromYears: (years) => years / 11.86, // Jupiter orbits the sun every 11.86 years
+    description: 'Jupiter takes 11.86 years to orbit the Sun'
   },
   {
     name: 'moon-orbits',
@@ -358,13 +399,6 @@ export const amusingTimeUnits: TimeUnit[] = [
     description: 'Number of Rugby World Cups that will occur (held every 4 years)'
   },
   {
-    name: 'full-moons',
-    singular: 'full moon',
-    plural: 'full moons',
-    convertFromYears: (years) => years * 12.37, // There are about 12.37 full moons per year
-    description: 'Number of full moons that will occur (approximately 12.37 per year)'
-  },
-  {
     name: 'friday-thirteenths',
     singular: 'Friday the 13th',
     plural: 'Friday the 13ths',
@@ -392,26 +426,5 @@ export const amusingTimeUnits: TimeUnit[] = [
     plural: 'palindrome dates',
     convertFromYears: (years) => years * 0.3, // Approximately 0.3 palindrome dates per year in MM/DD/YYYY format
     description: 'Number of times the calendar will be a palindrome (e.g., 02/02/2020, format depends on region)'
-  },
-  {
-    name: 'blue-moons',
-    singular: 'blue moon',
-    plural: 'blue moons',
-    convertFromYears: (years) => years * (7/19), // A blue moon occurs about 7 times in 19 years
-    description: 'Number of blue moons you will see (a second full moon in a calendar month, occurs about 7 times in 19 years)'
-  },
-  {
-    name: 'iss-orbits',
-    singular: 'orbit of the ISS',
-    plural: 'orbits of the ISS',
-    convertFromYears: (years) => years * 365.25 * 16, // ISS orbits Earth about 16 times per day
-    description: 'Number of times the International Space Station will orbit Earth (approx. 16 orbits per day)'
-  },
-  {
-    name: 'major-comets',
-    singular: 'major comet appearance',
-    plural: 'major comet appearances',
-    convertFromYears: (years) => years * 0.2, // Major comets visible to naked eye appear roughly once every 5 years
-    description: 'Number of major comet appearances visible from Earth (approximately one every 5 years)'
   }
 ];
