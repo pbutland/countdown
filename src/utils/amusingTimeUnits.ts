@@ -113,21 +113,28 @@ export const amusingTimeUnits: TimeUnit[] = [
     singular: 'light-year distance',
     plural: 'light-years distance',
     convertFromYears: (years) => years, // One year of light travel is one light-year
-    description: 'Distance light will travel during your remaining lifetime (1 light-year = 9.46 trillion km)'
+    description: 'Distance light travels (1 light-year = 9.46 trillion km)'
+  },
+  {
+    name: 'light-distance-km',
+    singular: 'trillion kilometers of light travel',
+    plural: 'trillion kilometers of light travel',
+    convertFromYears: (years) => years * 9.46, // 1 light-year = 9.46 trillion km
+    description: 'Distance light travels in kilometers (9.46 trillion km per year)'
   },
   {
     name: 'earth-rotations',
     singular: 'Earth rotation',
     plural: 'Earth rotations',
     convertFromYears: (years) => years * 365.25, // Earth rotates once per day (accounting for leap years)
-    description: 'Number of times the Earth will complete a full rotation on its axis'
+    description: 'Number of times the Earth completes a full rotation on its axis'
   },
   {
     name: 'dna-replications',
     singular: 'DNA replication cycle',
     plural: 'DNA replication cycles',
     convertFromYears: (years) => years * 365 * 24 * (3e10), // Approximately 30 billion cell divisions per day
-    description: 'Number of times your cells will copy their DNA (approximately 30 billion times per day)'
+    description: 'Number of times your cells copy their DNA (approximately 30 billion times per day)'
   },
   {
     name: 'brain-synapse-firings',
@@ -141,7 +148,7 @@ export const amusingTimeUnits: TimeUnit[] = [
     singular: 'Planck time unit',
     plural: 'Planck time units',
     convertFromYears: (years) => years * 365 * 24 * 3600 / 5.39e-44, // 5.39×10^-44 seconds per Planck unit
-    description: 'Your remaining life measured in the smallest possible time units (5.39×10^−44 seconds each)'
+    description: 'Your life measured in the smallest possible time units (5.39×10^−44 seconds each)'
   },
   
   // Cosmic & Earthly Countdown units
@@ -150,42 +157,42 @@ export const amusingTimeUnits: TimeUnit[] = [
     singular: 'million kilometers traveled through space',
     plural: 'million kilometers traveled through space',
     convertFromYears: (years) => years * 940, // Earth travels ~940 million km per year around the sun
-    description: 'Distance you will travel with Earth around the Sun (Earth travels ~940 million km per year)'
+    description: 'Distance of travel with Earth around the Sun (Earth travels ~940 million km per year)'
   },
   {
     name: 'solar-eclipses',
     singular: 'solar eclipse',
     plural: 'solar eclipses',
     convertFromYears: (years) => years * 2.4, // Global average of ~2.4 solar eclipses per year
-    description: 'Number of solar eclipses that will occur (average of 2-5 solar eclipses per year globally)'
+    description: 'Number of solar eclipses that occur (average of 2-5 solar eclipses per year globally)'
   },
   {
     name: 'lunar-eclipses',
     singular: 'lunar eclipse',
     plural: 'lunar eclipses',
     convertFromYears: (years) => years * 2.3, // Global average of ~2.3 lunar eclipses per year
-    description: 'Number of lunar eclipses that will occur (average of 2-3 lunar eclipses per year globally)'
+    description: 'Number of lunar eclipses that occur (average of 2-3 lunar eclipses per year globally)'
   },
   {
     name: 'full-moons',
     singular: 'full moon',
     plural: 'full moons',
     convertFromYears: (years) => years * 12.37, // There are about 12.37 full moons per year
-    description: 'Number of full moons that will occur (approximately 12.37 per year)'
+    description: 'Number of full moons that occur (approximately 12.37 per year)'
   },
   {
     name: 'blue-moons',
     singular: 'blue moon',
     plural: 'blue moons',
     convertFromYears: (years) => years * (7/19), // A blue moon occurs about 7 times in 19 years
-    description: 'Number of blue moons you will see (a second full moon in a calendar month, occurs about 7 times in 19 years)'
+    description: 'Number of blue moons (a second full moon in a calendar month, occurs about 7 times in 19 years)'
   },
   {
     name: 'iss-orbits',
     singular: 'orbit of the ISS',
     plural: 'orbits of the ISS',
     convertFromYears: (years) => years * 365.25 * 16, // ISS orbits Earth about 16 times per day
-    description: 'Number of times the International Space Station will orbit Earth (approx. 16 orbits per day)'
+    description: 'Number of times the International Space Station orbis Earth (approx. 16 orbits per day)'
   },
   {
     name: 'major-comets',
@@ -206,7 +213,7 @@ export const amusingTimeUnits: TimeUnit[] = [
     singular: 'Moon orbit around Earth',
     plural: 'Moon orbits around Earth',
     convertFromYears: (years) => years * 13, // Moon orbits Earth ~13 times per year
-    description: 'Number of times the Moon will orbit Earth (approximately 13 orbits per year)'
+    description: 'Number of times the Moon orbits Earth (approximately 13 orbits per year)'
   },
   {
     name: 'mercury-orbits',
@@ -368,49 +375,49 @@ export const amusingTimeUnits: TimeUnit[] = [
     singular: 'leap year',
     plural: 'leap years',
     convertFromYears: (years) => years / 4, // Leap year occurs every 4 years (approximately)
-    description: 'Number of February 29ths you will see (leap years occur approximately every 4 years)'
+    description: 'Number of February 29ths (leap years occur approximately every 4 years)'
   },
   {
     name: 'summer-olympics',
     singular: 'Summer Olympic Games',
     plural: 'Summer Olympic Games',
     convertFromYears: (years) => years / 4, // Summer Olympics occur every 4 years
-    description: 'Number of Summer Olympic Games that will occur (held every 4 years)'
+    description: 'Number of Summer Olympic Games (held every 4 years)'
   },
   {
     name: 'winter-olympics',
     singular: 'Winter Olympic Games',
     plural: 'Winter Olympic Games',
     convertFromYears: (years) => years / 4, // Winter Olympics occur every 4 years
-    description: 'Number of Winter Olympic Games that will occur (held every 4 years)'
+    description: 'Number of Winter Olympic Games (held every 4 years)'
   },
   {
     name: 'world-cups',
     singular: 'FIFA World Cup',
     plural: 'FIFA World Cups',
     convertFromYears: (years) => years / 4, // FIFA World Cup occurs every 4 years
-    description: 'Number of FIFA World Cups that will occur (held every 4 years)'
+    description: 'Number of FIFA World Cups (held every 4 years)'
   },
   {
     name: 'rugby-world-cups',
     singular: 'Rugby World Cup',
     plural: 'Rugby World Cups',
     convertFromYears: (years) => years / 4, // Rugby World Cup occurs every 4 years
-    description: 'Number of Rugby World Cups that will occur (held every 4 years)'
+    description: 'Number of Rugby World Cups (held every 4 years)'
   },
   {
     name: 'friday-thirteenths',
     singular: 'Friday the 13th',
     plural: 'Friday the 13ths',
     convertFromYears: (years) => years * 1.72, // Average of 1.72 Friday the 13ths per year
-    description: 'Number of Friday the 13ths that will occur (average of 1.72 per year)'
+    description: 'Number of Friday the 13ths (average of 1.72 per year)'
   },
   {
     name: 'us-elections',
     singular: 'U.S. presidential election',
     plural: 'U.S. presidential elections',
     convertFromYears: (years) => years / 4, // U.S. presidential elections occur every 4 years
-    description: 'Number of U.S. presidential elections that will occur (held every 4 years)'
+    description: 'Number of U.S. presidential elections (held every 4 years)'
   },
   {
     name: 'birthday-weekends',
@@ -418,13 +425,13 @@ export const amusingTimeUnits: TimeUnit[] = [
     plural: 'times your birthday falls on a weekend',
     pastTense: 'times your birthday fell on a weekend',
     convertFromYears: (years) => years * (2/7), // Probability of birthday falling on weekend is 2/7
-    description: 'Number of times your birthday will fall on a Saturday or Sunday (2/7 probability each year)'
+    description: 'Number of times your birthday falls on a Saturday or Sunday (2/7 probability each year)'
   },
   {
     name: 'palindrome-dates',
     singular: 'palindrome date',
     plural: 'palindrome dates',
     convertFromYears: (years) => years * 0.3, // Approximately 0.3 palindrome dates per year in MM/DD/YYYY format
-    description: 'Number of times the calendar will be a palindrome (e.g., 02/02/2020, format depends on region)'
+    description: 'Number of times the calendar is a palindrome (e.g., 02/02/2020, format depends on region)'
   }
 ];
